@@ -6,85 +6,73 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-   /* --- MODO OSCURO (Negro & Morado Eléctrico) --- */
-  --background: oklch(0.10 0 0); /* Negro Onyx */
-  --foreground: oklch(0.98 0 0);
+  /* --- MODO CLARO (Limpio con acentos Azul/Morado) --- */
+  --background: oklch(0.99 0.01 240); /* Blanco con un toque de azul gélido */
+  --foreground: oklch(0.12 0.05 280); /* Azul muy oscuro casi negro */
 
-  /* Cards ligeramente más claras (Gris carbón) para elevación */
-  --card: oklch(0.14 0.01 292); 
-  --card-foreground: oklch(0.98 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0.05 280);
   
-  --popover: oklch(0.13 0.01 292);
-  --popover-foreground: oklch(0.98 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0.05 280);
 
-  /* Morado Eléctrico / Neón */
-  --primary: oklch(0.62 0.26 292); 
-  --primary-foreground: oklch(0.98 0 0);
+  /* Primario: Mezcla Morado Eléctrico */
+  --primary: oklch(0.55 0.22 292); 
+  --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.22 0.06 292); /* Morado profundo para fondos de badges */
-  --secondary-foreground: oklch(0.85 0.08 292);
+  /* Secundario: Azul Institucional Suave */
+  --secondary: oklch(0.94 0.04 240); 
+  --secondary-foreground: oklch(0.40 0.15 240);
 
-  --muted: oklch(0.18 0.02 292);
-  --muted-foreground: oklch(0.65 0.02 292);
+  --muted: oklch(0.95 0.02 240);
+  --muted-foreground: oklch(0.45 0.05 240);
 
-  --accent: oklch(0.25 0.12 292);
-  --accent-foreground: oklch(0.98 0 0);
+  /* Accent: Cyan/Azul vibrante para destacar */
+  --accent: oklch(0.92 0.08 230);
+  --accent-foreground: oklch(0.30 0.20 240);
 
-  --destructive: oklch(0.55 0.22 25);
-  --border: oklch(0.20 0.03 292); /* Bordes con un tinte morado muy sutil */
-  --input: oklch(0.18 0.03 292);
-  --ring: oklch(0.62 0.26 292);
+  --destructive: oklch(0.60 0.20 25);
+  --destructive-foreground: oklch(0.98 0 0);
 
-  /* Sidebar con estilo minimalista negro */
-  --sidebar: oklch(0.11 0 0);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.62 0.26 292);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.18 0.05 292);
-  --sidebar-accent-foreground: oklch(0.62 0.26 292);
-  --sidebar-border: oklch(0.18 0 0);
-  --sidebar-ring: oklch(0.62 0.26 292);
+  --border: oklch(0.90 0.03 240); 
+  --input: oklch(0.90 0.03 240);
+  --ring: oklch(0.55 0.22 292);
+
+  --radius: 0.75rem;
 }
 
 .dark {
-  /* --- MODO OSCURO (Negro & Morado Eléctrico) --- */
-  --background: oklch(0.10 0 0); /* Negro Onyx */
-  --foreground: oklch(0.98 0 0);
+  /* --- MODO OSCURO (Profundidad Negra/Azulada) --- */
+  --background: oklch(0.08 0.02 250); /* Negro profundo con matiz azul noche */
+  --foreground: oklch(0.98 0.01 240);
 
-  /* Cards ligeramente más claras (Gris carbón) para elevación */
-  --card: oklch(0.14 0.01 292); 
-  --card-foreground: oklch(0.98 0 0);
+  --card: oklch(0.12 0.03 250); /* Gris azulado muy oscuro */
+  --card-foreground: oklch(0.98 0.01 240);
   
-  --popover: oklch(0.13 0.01 292);
-  --popover-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.10 0.03 250);
+  --popover-foreground: oklch(0.98 0.01 240);
 
-  /* Morado Eléctrico / Neón */
-  --primary: oklch(0.62 0.26 292); 
-  --primary-foreground: oklch(0.98 0 0);
+  /* Primario: Morado Neón */
+  --primary: oklch(0.65 0.25 292); 
+  --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.22 0.06 292); /* Morado profundo para fondos de badges */
-  --secondary-foreground: oklch(0.85 0.08 292);
+  /* Secundario: Azul Eléctrico Profundo */
+  --secondary: oklch(0.20 0.08 245); 
+  --secondary-foreground: oklch(0.80 0.10 245);
 
-  --muted: oklch(0.18 0.02 292);
-  --muted-foreground: oklch(0.65 0.02 292);
+  --muted: oklch(0.16 0.04 250);
+  --muted-foreground: oklch(0.60 0.05 240);
 
-  --accent: oklch(0.25 0.12 292);
-  --accent-foreground: oklch(0.98 0 0);
+  /* Accent: Un azul cian vibrante para botones de acción */
+  --accent: oklch(0.35 0.15 240);
+  --accent-foreground: oklch(0.95 0.05 230);
 
-  --destructive: oklch(0.55 0.22 25);
-  --border: oklch(0.20 0.03 292); /* Bordes con un tinte morado muy sutil */
-  --input: oklch(0.18 0.03 292);
-  --ring: oklch(0.62 0.26 292);
+  --destructive: oklch(0.50 0.20 25);
+  --destructive-foreground: oklch(0.98 0 0);
 
-  /* Sidebar con estilo minimalista negro */
-  --sidebar: oklch(0.11 0 0);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.62 0.26 292);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.18 0.05 292);
-  --sidebar-accent-foreground: oklch(0.62 0.26 292);
-  --sidebar-border: oklch(0.18 0 0);
-  --sidebar-ring: oklch(0.62 0.26 292);
+  --border: oklch(0.18 0.05 250); 
+  --input: oklch(0.16 0.05 250);
+  --ring: oklch(0.65 0.25 292);
 }
 
 @theme inline {
