@@ -15,15 +15,15 @@ import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils"; // Utilidad estándar de shadcn
 
 const menuItems = [
-  { _id: "1", icon: LayoutDashboard, label: "Jóvenes", href: "/PalletOrSuitcases" },
-  { _id: "2", icon: Package, label: "Domingos", href: "/administration" },
+  { _id: "1", icon: LayoutDashboard, label: "Jóvenes", href: "/youthNewGeneration" },
+  { _id: "2", icon: Package, label: "Domingos", href: "/sundayServices" },
 ];
 
 const ministerios = [
-  { _id: "1", icon: LayoutDashboard, label: "Adoración", href: "/adoration" },
-  { _id: "2", icon: Package, label: "Sonido y proyección", href: "/soundProyection" },
+  { _id: "1", icon: LayoutDashboard, label: "Adoración", href: "/adorations" },
+  { _id: "2", icon: Package, label: "Sonido y proyección", href: "/soundAndProyection" },
   { _id: "3", icon: Package, label: "Multimedia", href: "/multimedia" },
-  { _id: "4", icon: Package, label: "Evangelización", href: "/evangelization" },
+  { _id: "4", icon: Package, label: "Evangelización", href: "/evangelism" },
 ];
 
 const NavBar = () => {
@@ -114,7 +114,7 @@ const NavBar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem className="hidden md:block">
-                  <Link to="/eventos">
+                  <Link to="/events">
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-sm")}>
                       Eventos
                     </NavigationMenuLink>

@@ -29,55 +29,55 @@ const community = [
 ];
 
 const Community = () => {
+  // Solo necesitamos duplicarlo UNA vez para el truco del 50%
   const infiniteMembers = [...community, ...community];
+
   return (
-    <div className="py-12 overflow-hidden bg-background">
-      <h2 className="text-3xl font-bold mb-10 px-8">Nuestra Comunidad</h2>
+    <div className="py-8 md:py-12 overflow-hidden bg-background">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-10 px-4 md:px-8 text-center md:text-left">
+        Nuestra Comunidad
+      </h2>
 
-      {/* 2. CONTENEDOR PRINCIPAL (La ventana por donde se ve pasar el engranaje) */}
-      <div className="relative w-full">
-        {/* Degradados laterales para que las tarjetas aparezcan/desaparezcan suavemente */}
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
-
-        {/* 3. EL ENGRANAJE (Cinta que se mueve) */}
-        {/* Añadimos la clase 'animate-marquee' que definimos en el CSS */}
-        <div className="flex gap-6 animate-marquee">
+      <div className="relative w-full overflow-hidden">
+        {/* Degradados laterales para suavizar la entrada/salida */}
+        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-background to-transparent z-10" />{" "}
+        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-background to-transparent z-10" />{" "}
+        {/* CONTENEDOR DE LA ANIMACIÓN */}
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {" "}
           {infiniteMembers.map((member, index) => (
-            /* 4. LA TARJETA (Le damos un ancho fijo para que no se deforme en la cinta) */
-            <Card
-              key={index}
-              className="w-[300px] shrink-0 group overflow-hidden border-none bg-card/50 backdrop-blur-sm shadow-lg hover:shadow-primary/20 transition-all duration-300"
-            >
-              <CardContent className="p-0">
-                {/* Contenedor de Imagen */}
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img
-                    src={member.imageUrl}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-
-                {/* Información del Miembro */}
-                <div className="p-5 space-y-2">
-                  <div className="space-y-1">
-                    <h3 className="font-bold text-xl tracking-tight text-foreground group-hover:text-primary transition-colors truncate">
-                      {member.name}
-                    </h3>
-                    <Badge
-                      variant="secondary"
-                      className="bg-secondary text-secondary-foreground border-none font-medium"
-                    >
-                      {member.ministerialPosition}
-                    </Badge>
+            <div key={index} className="px-2 md:px-3">
+              {" "}
+              {/* Padding para el espacio entre cards */}
+              <Card className="w-64 md:w-75 shrink-0 group overflow-hidden border-none bg-card/50 backdrop-blur-sm shadow-lg">
+                {" "}
+                <CardContent className="p-0">
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img
+                      src={member.imageUrl}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  {/* Línea decorativa */}
-                  <div className="h-1 w-8 bg-primary rounded-full transform origin-left group-hover:w-full transition-all duration-500" />
-                </div>
-              </CardContent>
-            </Card>
+
+                  <div className="p-4 md:p-5 space-y-2">
+                    <div className="space-y-1">
+                      <h3 className="font-bold text-lg md:text-xl tracking-tight text-foreground group-hover:text-primary transition-colors truncate">
+                        {member.name}
+                      </h3>
+                      <Badge
+                        variant="secondary"
+                        className="font-medium text-xs md:text-sm"
+                      >
+                        {member.ministerialPosition}
+                      </Badge>
+                    </div>
+                    <div className="h-1 w-8 bg-primary rounded-full transform origin-left group-hover:w-full transition-all duration-500" />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
       </div>
